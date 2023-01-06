@@ -1,20 +1,57 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
-{% block title %}Hello HelloController!{% endblock %}
+{% block title %}
+    PLOP {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }} LA {{ parent() }} {{ block('title') }}
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <a href="{{ url('app_hello', { name: "Bob", req: "r" }) }}">ICI</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/cedriclombardot/anazon/src/Controller/HelloController.php'|file_link(0) }}">src/Controller/HelloController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/cedriclombardot/anazon/templates/hello/index.html.twig'|file_link(0) }}">templates/hello/index.html.twig</a></code></li>
-    </ul>
-</div>
+    {{ dump(category) }}
+
+    <h2>{{ category.title | length }}</h2>
+
+    {% if example is not defined or example < 5 %}
+        Afficher pas d'example
+    {% endif %}
+
+    {{ category.title }} plop {{ category.title }}
+    {{ category.title ~ ' plop ' ~ category.title }}
+
+    <hr />
+
+    {% set tabs = [] %}
+
+    {% if tabs|length > 0 %}
+        {% for i in tabs %}
+            {{ loop.first }} -
+            {{ loop.last }} -
+            {{ loop.index0 is odd }} -
+            <div class="toto">{{ loop.index }}</div>
+            {{ i }}<br />
+        {% endfor %}
+    {% else %}
+        Aucun résultat
+    {% endif %}
+
+
+    {% for i in tabs %}
+        {{ loop.first }} -
+        {{ loop.last }} -
+        {{ loop.index0 is odd }} -
+        <div class="toto">{{ loop.index }}</div>
+        {{ i }}<br />
+    {% else %}
+        Aucun résultat
+    {% endfor %}
+
+
+    {# IICi #}
+
+    <!-- LA -->
 {% endblock %}
