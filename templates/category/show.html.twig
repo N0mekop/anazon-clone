@@ -3,20 +3,37 @@
 {% block title %}Univers {{ category.title }}{% endblock %}
 
 {% block body %}
-<h1>{{ category.title }}</h1>
-
-
-<p>{{ category.description | raw }}</p>
+<div class="d-flex justify-content-center">
+    <h1>{{ category.title }}</h1>
+</div>
 
 {% for product in category.products %}
-<div>
-    <h2>{{ product.name }}</h2>
-    {% if product.productImages | length > 0 %}
-    <img src="{{ asset('product-images/' ~ product.productImages[0].path) }}" width="100" />
+{% if product.productImages | length > 0 %}
+<div class="container-fluid d-flex justify-content-center">
+    <div class="row">
+        <div class="col-3">
+            <div class="card card-sm" style="border-radius: 10px;">
+
+                <img src="{{ asset('product-images/' ~ product.productImages[0].path) }}" class="card-img-top"
+                    alt="Article 1">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">Prix: {{ product.price | format_currency('EUR', locale='fr') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endif %}
-    <span>{{ product.price | format_currency('EUR', locale='fr') }}</span>
-</div>
-{% else %}
-Aucun produit dans l'Univers {{ category.title }}.
-{% endfor %}
-{% endblock %}
+
+
+
+
+
+
+
+
+
+    {% else %}
+    Aucun produit dans l'Univers {{ category.title }}.
+    {% endfor %}
+    {% endblock %}
