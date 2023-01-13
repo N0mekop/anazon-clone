@@ -30,4 +30,11 @@ body {
 
 .btn-primary {
     background-color: #003f62;
+    border-color: #003f62;
+
+    &:hover {
+        background-color: #eda315;
+        border-color: #eda315;
+        color: #ffffff;
+    }
 }
