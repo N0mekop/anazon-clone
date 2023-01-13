@@ -1,5 +1,16 @@
 $bg: lightgrey;
 
+@import "~bootstrap/scss/bootstrap";
+
 body {
     background-color: $bg;
+}
+
+#carouselExampleIndicators {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.card {
+    width: 75%;
 }

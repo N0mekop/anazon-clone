@@ -1,0 +1,39 @@
+// Redimensionne les articles pour qu'ils occupent la totalité de la largeur de l'écran sur les petits écrans
+@media (max-width: 575.98px) {
+    .card {
+      width: 100%;
+    }
+  }
+  
+  // Redimensionne les articles pour qu'ils occupent la moitié de la largeur de l'écran sur les écrans moyens
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .card {
+      width: 50%;
+    }
+  }
+  
+  // Redimensionne les articles pour qu'ils occupent un tiers de la largeur de l'écran sur les écrans larges
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .card {
+      width: 33.3333%;
+    }
+  }
+  
+  // Redimensionne les articles pour qu'ils occupent un quart de la largeur de l'écran sur les très grands écrans
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .card {
+      width: 25%;
+    }
+  }
+  
+  // Redimensionne les articles pour qu'ils occupent un cinquième de la largeur de l'écran sur les écrans extra-larges
+  @media (min-width: 1200px) {
+    .card {
+      width: 20%;
+    }
+  }
+  
+  #carouselExampleIndicators {
+    width: 50%;
+    margin: 0 auto;
+  }
