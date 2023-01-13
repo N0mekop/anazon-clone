@@ -7,33 +7,26 @@
     <h1>{{ category.title }}</h1>
 </div>
 
-{% for product in category.products %}
-{% if product.productImages | length > 0 %}
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-3">
-            <div class="card card-sm" style="border-radius: 10px;">
-
+        {% for product in category.products %}
+        <div class="col-3 d-flex justify-content-center mt-5">
+            <div class="card" style="border-radius: 10px;">
+                {% if product.productImages | length > 0 %}
                 <img src="{{ asset('product-images/' ~ product.productImages[0].path) }}" class="card-img-top"
                     alt="Article 1">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Prix: {{ product.price | format_currency('EUR', locale='fr') }}</p>
+                    <a href="#" class="btn btn-primary">Acheter</a>
                 </div>
             </div>
         </div>
+        {% else %}
+        Aucun produit dans l'Univers {{ category.title }}.
+        {% endfor %}
     </div>
-    {% endif %}
+</div>
 
-
-
-
-
-
-
-
-
-    {% else %}
-    Aucun produit dans l'Univers {{ category.title }}.
-    {% endfor %}
-    {% endblock %}
+{% endblock %}

@@ -1,4 +1,4 @@
-$bg: lightgrey;
+$bg: #ffffff;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -6,11 +6,28 @@ body {
     background-color: $bg;
 }
 
-#carouselExampleIndicators {
+/* #carouselExampleIndicators {
     width: 75%;
     margin: 0 auto;
+} */
+
+.card-img-top {
+    max-height: 350px;
 }
 
 .card {
     width: 75%;
+}
+
+.list-group-item {
+    background-color: #eda315;
+
+    &:hover {
+        background-color: #003f62;
+        color: #ffffff;
+    }
+}
+
+.btn-primary {
+    background-color: #003f62;
 }
