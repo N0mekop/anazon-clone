@@ -3,7 +3,7 @@ $bg: #ffffff;
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: $bg;
+  background-color: $bg;
 }
 
 /* #carouselExampleIndicators {
@@ -12,29 +12,29 @@ body {
 } */
 
 .card-img-top {
-    max-height: 350px;
+  max-height: 250px;
 }
 
 .card {
-    width: 75%;
+  width: 75%;
 }
 
 .list-group-item {
-    background-color: #eda315;
+  background-color: #eda315;
 
-    &:hover {
-        background-color: #003f62;
-        color: #ffffff;
-    }
+  &:hover {
+    background-color: #003f62;
+    color: #ffffff;
+  }
 }
 
 .btn-primary {
-    background-color: #003f62;
-    border-color: #003f62;
+  background-color: #003f62;
+  border-color: #003f62;
 
-    &:hover {
-        background-color: #eda315;
-        border-color: #eda315;
-        color: #ffffff;
-    }
+  &:hover {
+    background-color: #eda315;
+    border-color: #eda315;
+    color: #ffffff;
+  }
 }
