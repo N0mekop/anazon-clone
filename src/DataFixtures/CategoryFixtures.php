@@ -9,6 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 class CategoryFixtures extends Fixture
 {
     public const CATEGORY_PELUCHES = 'CATEGORY_PELUCHES';
+    public const CATEGORY_JEUX_DE_SOCIETE = 'CATEGORY_JEUX_DE_SOCIETE';
 
     public function load(ObjectManager $manager): void
     {
@@ -21,6 +22,11 @@ class CategoryFixtures extends Fixture
         $category->setParent($jouets);
         $manager->persist($category);
         $this->addReference(self::CATEGORY_PELUCHES, $category);
+
+        $category = new Category();
+        $category->setTitle('Jeux de société');
+        $manager->persist($category);
+        $this->addReference(self::CATEGORY_JEUX_DE_SOCIETE, $category);
 
         $category = new Category();
         $category->setTitle('Balades');
