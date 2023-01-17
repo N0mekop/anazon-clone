@@ -20,9 +20,7 @@
 {% endif %} #}
 
 {% if vich_uploader_asset(entity.instance, field.property, entity.fqcn) %}
-    <a href="{{ vich_uploader_asset(entity.instance, field.property, entity.fqcn) }}" download>
-        Download
-    </a>
+    <img src="{{ vich_uploader_asset(entity.instance, field.property, entity.fqcn)|imagine_filter('admin_thumbnail') }}">
 {% else %}
     <span class="badge badge-secondary">
         Empty
