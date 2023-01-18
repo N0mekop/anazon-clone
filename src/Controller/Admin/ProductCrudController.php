@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Admin\Field\VichFileField;
 use App\Admin\Field\VichImageField;
 use App\Entity\Product;
 use App\Form\ProductImageType;
@@ -28,6 +29,9 @@ class ProductCrudController extends AbstractCrudController
         yield VichImageField::new('imageFile');
         yield MoneyField::new('price')->setCurrency('EUR')->setStoredAsCents(false);
         yield TextEditorField::new('description')->hideOnIndex();
+
+        yield FormField::addPanel('Doc');
+        yield VichFileField::new('manualFile');
 
         yield FormField::addTab('Images');
         yield CollectionField::new('productImages')
