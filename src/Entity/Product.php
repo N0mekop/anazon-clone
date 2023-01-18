@@ -42,6 +42,9 @@ class Product
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'image')]
     private ?File $imageFile = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
     public function __construct()
     {
         $this->productImages = new ArrayCollection();
@@ -154,4 +157,15 @@ class Product
     {
         return $this->imageFile;
     }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
 }
