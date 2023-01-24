@@ -68,6 +68,9 @@
             ".php-cs-fixer.dist.php"
         ]
     },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v6.1.1"
+    },
     "liip/imagine-bundle": {
         "version": "2.10",
         "recipe": {
