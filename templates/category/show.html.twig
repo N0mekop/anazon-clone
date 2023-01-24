@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Prix: {{ product.price | format_currency('EUR', locale='fr') }}</p>
-                    <a href="#" class="btn btn-primary">Acheter</a>
+                    <a href="{{ path('app_product', { id: product.id }) }}" class="btn btn-primary">Acheter</a>
                 </div>
             </div>
         </div>
