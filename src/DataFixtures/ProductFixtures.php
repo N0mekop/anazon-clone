@@ -13,7 +13,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     public const PRODUCT_BOURRICOT = 'PRODUCT_BOURRICOT';
     public const PRODUCT_CROQUE_CAROTTE = 'PRODUCT_CROQUE_CAROTTE';
     public const PRODUCT_ENFANTS_CONTRE_PARENTS = 'PRODUCT_ENFANTS_CONTRE_PARENTS';
-    public const PRODUCT_MIROGOLO = 'MIROGOLO';
+    public const PRODUCT_MIROGOLO = 'PRODUCT_MIROGOLO';
 
     public function load(ObjectManager $manager): void
     {
